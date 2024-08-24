@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev": "wrangler pages dev"
+  },
+  "dependencies": {
+    "hono": "4.5.8"
+  },
+  "devDependencies": {
+    "typescript": "5.5.4",
+    "wrangler": "3.72.2"
+  }
+}
