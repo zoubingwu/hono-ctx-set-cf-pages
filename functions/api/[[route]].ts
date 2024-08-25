@@ -3,15 +3,16 @@ import { handle } from "hono/cloudflare-pages";
 
 interface HonoContext {
   Variables: {
-    user: string
+    user: string;
   };
 }
 
-const app = new Hono<HonoContext>().basePath('/api');
+const app = new Hono<HonoContext>().basePath("/api");
 
-const routes = app.get('/hello', (c) => {
+const routes = app.get("/hello", (c) => {
   return c.json({
-    message: `Hello, ${c.get('user')}!`
+    //@ts-ignore
+    message: `Hello, ${c.env.eventContext.data.user}!`,
   });
 });
 
